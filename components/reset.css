@@ -10,6 +10,38 @@ CSS RESET
     box-sizing: border-box;
 }
 
+html {
+    hanging-punctuation: first last;
+}
+
+header,
+footer,
+main,
+section,
+article {
+    container-type:inline-size;
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+    text-wrap: balance; /* avoid orphans (tries to equalize) */
+}
+
+p,
+li,
+figcaption {
+    text-wrap: pretty; /* favors good typography, avoid orphans + more */
+    max-width: 65ch;
+}
+
+ul {
+    list-style: none;
+}
+
 img {
     /*
     ^^ Credit - Kevin Powell: "A better image reset for your CSS"
@@ -30,6 +62,14 @@ img {
     preload lo-res (<link rel=preload as=image href="" fetchpriority=high>)
     implement with <img ... stlye="background-image: url(lo-res.jpx)">
     */
+}
+
+@media (prefers-reduced-motion: no-preference) {
+    :has(:target) {
+        /* :has(:target) includes smooth scroll for any children too */
+        scroll-behavior: smooth;
+        scroll-padding-top: 3rem;
+    }
 }
 
 /* ----------------------------------------------------------------------------
