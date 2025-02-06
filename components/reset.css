@@ -7,11 +7,15 @@ CSS RESET
 *::after {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;
+    box-sizing: inherit;
 }
 
 html {
     hanging-punctuation: first last;
+}
+
+body {
+    box-sizing: border-box;
 }
 
 header,
